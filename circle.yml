@@ -1,0 +1,11 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t ruby-224 .
+
+test:
+  override:
+    - docker run -t ruby-224 /bin/bash -c rspec spec 
